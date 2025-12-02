@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности - BKReview</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%238c8c8c'/><text x='50' y='65' font-family='Arial' font-size='60' text-anchor='middle' fill='%23000000'>B</text></svg>">
+    <style>
+        /* Стили для страницы политики конфиденциальности */
+        .privacy-main {
+            padding: 60px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .privacy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .privacy-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--text-primary);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .privacy-date {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .privacy-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .privacy-list {
+            list-style-type: none;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .privacy-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .privacy-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .privacy-table th {
+            background: var(--accent-color);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .privacy-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .privacy-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .highlight {
+            background: rgba(var(--accent-rgb), 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--button-bg);
+            color: var(--button-text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 30px;
+            }
+            
+            .privacy-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .privacy-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-main {
+                padding: 40px 0;
+            }
+            
+            .privacy-container {
+                padding: 20px;
+            }
+            
+            .privacy-title {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-text {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <div class="logo">BKREVIEW</div>
+                    <div class="logo-subtitle">ЛУЧШИЕ ОБЗОРЫ БУКМЕКЕРОВ.</div>
+                </a>
+                <div class="header-controls">
+                    <div class="theme-switcher">
+                        <button class="theme-btn active" data-theme="dark">🌙</button>
+                        <button class="theme-btn" data-theme="light">☀️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="privacy-main">
+        <div class="container">
+            <div class="privacy-container">
+                <h1 class="privacy-title">Политика конфиденциальности</h1>
+                <div class="privacy-date">Дата вступления в силу: 1 января 2025 года</div>
+                
+                <div class="privacy-section">
+                    <h2 class="section-title">1. Общие положения</h2>
+                    <p class="privacy-text">
+                        Настоящая Политика конфиденциальности (далее — «Политика») определяет порядок обработки и защиты информации о пользователях сайта BKReview (далее — «Сайт»), который предоставляет информационные обзоры букмекерских контор.
+                    </p>
+                    <p class="privacy-text">
+                        Используя Сайт, вы соглашаетесь с условиями данной Политики. Если вы не согласны с этими условиями, пожалуйста, не используйте наш Сайт.
+                    </p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">2. Собираемая информация</h2>
+                    <p class="privacy-text">Мы можем собирать следующие типы информации:</p>
+                    
+                    <ul class="privacy-list">
+                        <li><strong>Техническая информация:</strong> данные, автоматически собираемые при посещении Сайта (IP-адрес, тип браузера, операционная система, время доступа)</li>
+                        <li><strong>Информация из cookies:</strong> данные о ваших предпочтениях и настройках для улучшения работы Сайта</li>
+                        <li><strong>Добровольно предоставленная информация:</strong> данные, которые вы предоставляете при обращении через контактные формы (имя, email)</li>
+                        <li><strong>Аналитическая информация:</strong> данные о поведении на Сайте (просмотренные страницы, время посещения, переходы по ссылкам)</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">3. Цели сбора информации</h2>
+                    <p class="privacy-text">Собранная информация используется для следующих целей:</p>
+                    
+                    <table class="privacy-table">
+                        <thead>
+                            <tr>
+                                <th>Тип информации</th>
+                                <th>Цель использования</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Технические данные</td>
+                                <td>Обеспечение корректной работы Сайта, диагностика проблем</td>
+                            </tr>
+                            <tr>
+                                <td>Cookies и аналитика</td>
+                                <td>Улучшение пользовательского опыта, анализ посещаемости</td>
+                            </tr>
+                            <tr>
+                                <td>Контактная информация</td>
+                                <td>Ответы на запросы пользователей, обратная связь</td>
+                            </tr>
+                            <tr>
+                                <td>Данные поведения</td>
+                                <td>Оптимизация контента, улучшение навигации</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">4. Использование файлов cookie</h2>
+                    <p class="privacy-text">
+                        Сайт использует файлы cookie для следующих целей:
+                    </p>
+                    <ul class="privacy-list">
+                        <li>Запоминание ваших предпочтений (например, выбранной темы оформления)</li>
+                        <li>Сбор анонимной статистики посещаемости</li>
+                        <li>Обеспечение безопасности и предотвращение мошенничества</li>
+                        <li>Улучшение производительности Сайта</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">Ваше согласие</div>
+                        <p class="privacy-text">
+                            Продолжая использовать Сайт, вы даете согласие на использование файлов cookie. Вы можете отключить cookies в настройках вашего браузера, однако это может повлиять на функциональность Сайта.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">5. Защита информации</h2>
+                    <p class="privacy-text">
+                        Мы принимаем разумные меры безопасности для защиты вашей информации от несанкционированного доступа, изменения, раскрытия или уничтожения. Эти меры включают:
+                    </p>
+                    <ul class="privacy-list">
+                        <li>Шифрование передаваемых данных</li>
+                        <li>Регулярный мониторинг систем на предмет уязвимостей</li>
+                        <li>Ограниченный доступ к данным для сотрудников</li>
+                        <li>Регулярное обновление программного обеспечения</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">6. Передача информации третьим лицам</h2>
+                    <p class="privacy-text">
+                        Мы не продаем, не обмениваем и не передаем личную информацию пользователей третьим лицам, за исключением следующих случаев:
+                    </p>
+                    <ul class="privacy-list">
+                        <li>С вашего явного согласия</li>
+                        <li>Для выполнения требований законодательства</li>
+                        <li>Для защиты прав и безопасности Сайта</li>
+                        <li>Аналитическим сервисам (Google Analytics) в обезличенном виде</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">7. Ссылки на сторонние сайты</h2>
+                    <p class="privacy-text">
+                        Сайт содержит ссылки на букмекерские конторы и другие сторонние ресурсы. Мы не несем ответственности за политику конфиденциальности или содержание этих сайтов. Рекомендуем ознакомиться с политикой конфиденциальности каждого сайта, который вы посещаете.
+                    </p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">8. Права пользователей</h2>
+                    <p class="privacy-text">Вы имеете право:</p>
+                    <ul class="privacy-list">
+                        <li>Запрашивать информацию о том, какие ваши данные мы обрабатываем</li>
+                        <li>Требовать исправления неточных данных</li>
+                        <li>Отозвать согласие на обработку данных</li>
+                        <li>Требовать удаления ваших данных (право на забвение)</li>
+                        <li>Получать данные в структурированном, машиночитаемом формате</li>
+                    </ul>
+                    
+                    <div class="contact-info">
+                        <p>Для реализации ваших прав или получения дополнительной информации обращайтесь по адресу:</p>
+                        <p><a href="mailto:contact@bkreviewnet.ru">contact@bkreviewnet.ru</a></p>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">9. Хранение данных</h2>
+                    <p class="privacy-text">
+                        Мы храним ваши данные только в течение времени, необходимого для достижения целей, указанных в настоящей Политике, или в соответствии с требованиями законодательства.
+                    </p>
+                    <p class="privacy-text">
+                        Технические данные и данные аналитики хранятся в агрегированном, обезличенном виде.
+                    </p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">10. Изменения в политике конфиденциальности</h2>
+                    <p class="privacy-text">
+                        Мы оставляем за собой право вносить изменения в настоящую Политику конфиденциальности. Все изменения будут опубликованы на этой странице с указанием даты последнего обновления. Продолжая использовать Сайт после внесения изменений, вы соглашаетесь с обновленной Политикой.
+                    </p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="section-title">11. Контактная информация</h2>
+                    <p class="privacy-text">
+                        По всем вопросам, связанным с настоящей Политикой конфиденциальности или обработкой ваших данных, вы можете связаться с нами:
+                    </p>
+                    <ul class="privacy-list">
+                        <li>Электронная почта: <a href="mailto:contact@bkreviewnet.ru">contact@bkreviewnet.ru</a></li>
+                        <li>Через форму обратной связи на странице <a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="index.html" class="back-to-home">Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="contact.html">Контакты</a>
+                <a href="terms.html">Условия использования</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
+            
+            <div class="responsible-gaming">
+                <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    BeGambleAware
+                </a>
+                <a href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                    </svg>
+                    GamCare
+                </a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 BKReview. Все права защищены. 18+</p>
+                <p class="disclaimer">Информация предоставлена в ознакомительных целях</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
