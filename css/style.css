@@ -393,6 +393,8 @@ body {
     transition: all 0.3s;
     text-align: center;
     color: inherit;
+
+    margin-top: auto;   /* ВАЖНО: прижимаем кнопку к низу карточки */
     margin-bottom: 5px;
 }
 
@@ -1172,3 +1174,78 @@ html[data-theme="dark"] .light-circle { opacity: 0.4; }
 
 html[data-theme="light"] .dark-circle { opacity: 0.4; }
 html[data-theme="light"] .light-circle { opacity: 1; }
+
+/* Зеленое свечение ТОЛЬКО для Лиги Ставок */
+#freeBetLiga:hover {
+    color: #00ff6a !important;       /* ярко-зелёный текст */
+    text-shadow: 0 0 10px #00ff6a;   /* зелёное свечение */
+    transition: 0.3s;
+}
+/* Зеленая подсветка названия Лиги Ставок */
+.liga-title-link:hover {
+    color: #00ff6a !important;
+    text-shadow: 0 0 10px #00ff6a;
+    transition: 0.3s;
+}
+.moving-banner {
+    display: none !important;
+}
+.platform-logo {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+/* Зеленый hover только для Лига Ставок */
+#btnPari:hover .bonus-text,
+.liga-review:hover {
+    color: #00ff6a !important;
+    text-shadow: 0 0 10px #00ff6a;
+    transition: 0.3s ease;
+}
+
+/* Зеленый hover для "Читать полный обзор" (только Лига Ставок) */
+.full-review-link.liga:hover {
+    color: #00ff6a !important;
+    text-shadow: 0 0 10px #00ff6a;
+}
+/* Зеленый hover специально для кнопки 7777 ₽ в winline */
+.btn-secondary.winline-bonus:hover {
+    color: #00ff6a !important;
+    border-color: #00ff6a !important;
+    text-shadow: 0 0 10px #00ff6a;
+    transition: 0.25s ease;
+    background: rgba(0, 255, 106, 0.15) !important;
+}
+/* Зеленый hover для кнопки 7777₽ на Winline */
+.btn-secondary.winline-bonus:hover {
+    color: #00ff6a !important;
+    border-color: #00ff6a !important;
+    text-shadow: 0 0 10px #00ff6a;
+    background: rgba(0, 255, 106, 0.15) !important;
+    transition: 0.25s ease;
+}
+.rating-value {
+    display: none !important;
+}
+/* Цвет звездочек — как на примере */
+.rating-stars {
+    color: #ffc93d; /* ярко-жёлтый */
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+/* Цвет "пустой" звезды */
+.rating-stars span.empty {
+    color: #555; /* серый, как на твоём примере */
+}
+/* Опустить кнопку Лига Ставок ниже под список */
+#btnPari {
+    margin-top: 18px;  /* Можешь поставить 20px если хочешь чуть ниже */
+}
+/* Чтобы звёзды были поверх и не пропадали */
+.star-rating,
+.star-rating .stars {
+    position: relative;
+    z-index: 5;
+}
