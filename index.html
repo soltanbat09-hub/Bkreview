@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,12 +27,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>
-                    
-                    <span class="hero-accent">Найдите лучшее место с </span>
-                    <span class="hero-brand">BkReview</span><span class="hero-accent">.</span>
-                </h1>
-                
+               <h1>
+    <span class="hero-accent">Найдите лучшее место с </span>
+    <span class="hero-brand">BkReview</span><span class="hero-accent">.</span>
+</h1>
+
+
+
             </div>
         </div>
     </section>
@@ -83,31 +84,35 @@
                     </div>
                 </article>
 
-                <!-- Pari -->
+                <!-- Лига ставок-->
                 <article class="platform-card">
-                    <div class="platform-header">
+                    <div class="platform-header">                       
                         <div class="platform-badge">Рекомендуем</div>
-                        <div class="platform-logo pari-logo">PARI</div>
                     </div>
-                    <h3 class="platform-title">Pari</h3>
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="4.2"></div>
-                    </div>
-                    
+                    <h3 class="platform-title">
+    <span id="ligaTitle" class="liga-title-link">Лига Ставок</span>
+</h3>
+                 <div class="rating-section">
+    <div class="star-rating" data-rating="4.2"></div>
+</div>             
                     <ul class="platform-features">
-                        <li>Инновационная платформа</li>
+                        <li>
+  <a id="freeBetLiga" class="bonus-highlight">
+      Бесплатная ставка 7777 рублей
+  </a>
+</li>
                         <li>Широкая линия событий</li>
                         <li>Быстрые выплаты</li>
                         <li>Удобное мобильное приложение</li>
                     </ul>
-                    <a href="https://parimatch.ru" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Pari и получить бонус</div>
+                    <a id="btnPari" target="_blank" class="platform-bonus">
+                        <div class="bonus-text">Перейти на Лига Ставок и получить бонус</div>
                     </a>
                     
                     <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
                     <div class="review-link-container">
-                        <a href="reviews/pari.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
+    <a href="reviews/ligastavok.html" class="full-review-link liga">Читать полный обзор</a>
+</div>
                 </article>
 
                 <!-- Mellbet -->
@@ -281,7 +286,69 @@
             </div>
         </div>
     </footer>
+<script>
+  const btnPari = document.querySelector('#btnPari');
 
-    <script src="js/script.js"></script>
+  if (btnPari) {
+    btnPari.addEventListener('click', function (e) {
+      e.preventDefault(); // блокируем переход на parimatch.ru
+      window.open(
+        'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  const freeBetLiga = document.querySelector('#freeBetLiga');
+
+  if (freeBetLiga) {
+    freeBetLiga.style.cursor = 'pointer';
+
+    freeBetLiga.addEventListener('click', function () {
+      window.open(
+        'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  const ligaTitle = document.querySelector('#ligaTitle');
+
+  if (ligaTitle) {
+    ligaTitle.style.cursor = 'pointer';
+
+    ligaTitle.addEventListener('click', function () {
+      window.open(
+        'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  // Переключатель темы (кружочки сверху справа)
+  const circleToggle = document.getElementById('circleToggle');
+
+  if (circleToggle) {
+    const circles = circleToggle.querySelectorAll('.circle');
+
+    circles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-theme'); // "dark" или "light"
+
+        // ставим атрибут на <html data-theme="...">
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // подсвечиваем активный кружок
+        circles.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  }
+</script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
