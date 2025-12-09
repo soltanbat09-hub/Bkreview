@@ -1598,10 +1598,6 @@ html[data-theme="light"] .light-circle { opacity: 1; }
 .platform-features li.bonus-white strong {
     color: #ffffff !important;
 }
-/* Скрываем Фонбет */
-.platform-card.hide-fonbet {
-    display: none !important;
-}
 
 /* Скрываем Бетсити */
 .platform-card.hide-betsiti {
