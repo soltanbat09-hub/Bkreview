@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="dark">
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="img/site.webmanifest">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BkReview - Обзоры лучших букмекерских контор России</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%238c8c8c'/><text x='50' y='65' font-family='Arial' font-size='60' text-anchor='middle' fill='%23000000'>B</text></svg>">
 </head>
 <body>
     <!-- Header -->
@@ -32,198 +40,240 @@
     <span class="hero-accent">Найдите лучшее место с </span>
     <span class="hero-brand">BkReview</span><span class="hero-accent">.</span>
 </h1>
-
-
-
             </div>
         </div>
     </section>
-
     <!-- Platforms Grid -->
     <section class="platforms">
-        <div class="container">
-            <h2 class="section-title">Рейтинг букмекерских контор 2025</h2>
-           
-            
+    <div class="container">
+        <div class="platforms-panel">
             <div class="platforms-grid">
-                <!-- Winline -->
-                <article class="platform-card">
-                    <!-- Заголовок с бейджем и лого -->
-                    <div class="platform-header">
-                        <div class="platform-badge">Новая платформа</div>
-                        <div class="platform-logo winline-logo">WINLINE</div>
-                    </div>
-                    
-                    <!-- Название над звездами -->
-                    <h3 class="platform-title">Winline</h3>
-                    
-                    <!-- Секция только со звездами -->
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="4.35"></div>
-                    </div>
-                    
-                    <!-- Остальной контент -->
-                   
-                    <ul class="platform-features">
-                        <li>
-                            <a href="https://www.winline.ru" target="_blank" class="bonus-highlight">
-                                Бесплатная ставка 3000 рублей
-                            </a>
-                        </li>
-                        <li>Мгновенные выводы средств</li>
-                        <li>Широкая роспись событий</li>
-                        <li>Высокие коэффициенты</li>
-                        
-                    </ul>
-                    <a href="https://www.winline.ru" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Winline и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-                        <a href="reviews/winline.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
-                </article>
+    <!-- Winline -->
+    <article class="platform-card winline-card" data-categories="bk">
+        <div class="platform-header"></div>
+        <div class="platform-title-logos">
+            <!-- Поставь своё реальное изображение Winline -->
+            <img src="img/winline-banner-320x120.png" alt="Winline" class="platform-logo-img">
+        </div>
+        <div class="rating-section">
+            <div class="star-rating" data-rating="4.35"></div>
+        </div>
 
-                <!-- Лига ставок-->
-                <article class="platform-card">
-                    <div class="platform-header">                       
-                        <div class="platform-badge">Рекомендуем</div>
-                    </div>
-                    <h3 class="platform-title">
-    <span id="ligaTitle" class="liga-title-link">Лига Ставок</span>
-</h3>
-                 <div class="rating-section">
-    <div class="star-rating" data-rating="4.2"></div>
-</div>             
-                    <ul class="platform-features">
-                        <li>
-  <a id="freeBetLiga" class="bonus-highlight">
-      Бесплатная ставка 7777 рублей
+        <ul class="platform-features">
+            <li>
+                <a href="https://www.winline.ru" target="_blank">
+                    Бесплатная ставка 3000 рублей
+                </a>
+            </li>
+            <li>Мгновенные выводы средств</li>
+            <li>Широкая роспись событий</li>
+            <li>Высокие коэффициенты</li>
+        </ul>
+        <a href="https://www.winline.ru" target="_blank" class="platform-bonus" data-name="winline">
+            <div class="bonus-text">Перейти на Winline и получить бонус</div>
+        </a>
+
+        <div class="review-link-container">
+            <a href="reviews/winline.html" class="full-review-link">Читать полный обзор</a>
+        </div>
+    </article>
+ <!-- Лига Ставок -->
+<article class="platform-card">
+    <div id="ligaLogo" class="platform-title-logos">
+        <img src="img/liga-banner-320x120.png" alt="Лига Ставок" class="platform-logo-img">
+    </div>
+    <div class="rating-section">
+        <div class="star-rating" data-rating="4.2"></div>
+    </div>
+    <ul class="platform-features">
+        <li class="bonus-line">
+    <a id="freeBetLiga" class="feature-link">
+        <strong>Бесплатная ставка 7777 ₽</strong>
+    </a>
+</li>
+        <li>Широкая линия событий</li>
+        <li>Быстрые выплаты</li>
+        <li>Удобное мобильное приложение</li>
+    </ul>
+    <a id="btnPari" target="_blank" class="platform-bonus">
+        <div class="bonus-text">Перейти на Лига Ставок</div>
+    </a>
+    <div class="review-link-container">
+        <a href="reviews/ligastavok.html" class="full-review-link liga">Читать полный обзор</a>
+    </div>
+</article>
+    <!-- MELLBET -->
+<article class="platform-card">
+    <!-- Кликабельный логотип -->
+    <div id="mellbetLogo" class="platform-title-logos">
+    <img src="img/mellbet.png" alt="Mellbet" class="platform-logo-img">
+</div>
+    <div class="rating-section">
+        <div class="star-rating" data-rating="4.0"></div>
+    </div>
+    <ul class="platform-features">
+        <!-- Кликабельная бесплатная ставка -->
+        <li class="bonus-line">
+    <a id="mellbetBonus" class="feature-link">
+        <strong>Бесплатная ставка до 15000 ₽</strong>
+    </a>
+</li>
+
+        <li>Удобное приложение</li>
+        <li>Высокие коэффициенты</li>
+        <li>Разнообразные акции</li>
+    </ul>
+
+    <!-- Кнопка "Перейти на Mellbet" -->
+    
+<a id="btnMellbet" class="platform-bonus">
+    <div class="bonus-text">Перейти на Mellbet</div>
+</a>
+    <div class="review-link-container">
+        <a href="reviews/mellbet.html" class="full-review-link mellbet">Читать полный обзор</a>
+    </div>
+</article>
+
+    <!-- LEON BET -->
+<article class="platform-card leon-card">
+     <a href="https://click.lrupartners.com/?serial=4524&creative_id=7&anid="
+       target="_blank"
+       rel="nofollow noopener"
+       class="platform-title-logos">
+        <img src="img/leon.png" alt="Leon Bet" class="platform-logo-img">
+    </a>
+    <div class="rating-section">
+        <div class="star-rating" data-rating="4.6"></div>
+    </div>
+    <ul class="platform-features">
+        <li class="bonus-line">
+  <a href="https://click.lrupartners.com/?serial=4524&creative_id=7&anid="
+     target="_blank"
+     rel="nofollow noopener"
+     class="feature-link">
+     <strong>Бесплатная ставка до 25 000 ₽</strong>
   </a>
 </li>
-                        <li>Широкая линия событий</li>
-                        <li>Быстрые выплаты</li>
-                        <li>Удобное мобильное приложение</li>
-                    </ul>
-                    <a id="btnPari" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Лига Ставок и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-    <a href="reviews/ligastavok.html" class="full-review-link liga">Читать полный обзор</a>
+
+        <li>Широкая линия событий</li>
+        <li>Быстрая регистрация</li>
+        <li>Удобное мобильное приложение</li>
+    </ul>
+    <a href="https://click.lrupartners.com/?serial=4524&creative_id=7&anid="
+       target="_blank"
+       rel="nofollow noopener"
+       class="platform-bonus">
+        <div class="bonus-text">Перейти на Leon Bet</div>
+    </a>
+    <div class="review-link-container">
+        <a href="reviews/leonbet.html" class="full-review-link leon">
+    Читать полный обзор
+</a>
+
+    </div>
+</article>
+<!-- BETM -->
+<article class="platform-card">
+    <a href="https://tracker.betmpartners.ru/link?btag=102187322_474083" 
+       target="_blank" 
+       rel="nofollow noopener"
+       class="platform-title-logos">
+        <img src="img/betm.png" alt="BetM" class="platform-logo-img">
+    </a>
+    <div class="rating-section">
+        <div class="star-rating" data-rating="4.3"></div>
+    </div>
+    <ul class="platform-features">
+      <li class="bonus-line">
+  <a href="https://tracker.betmpartners.ru/link?btag=102187322_474083"
+     target="_blank"
+     rel="nofollow noopener"
+     class="feature-link">
+     <strong>Бесплатная ставка до 25 000 ₽</strong>
+  </a>
+</li>
+        <li>Поддержка криптовалют</li>
+        <li>Мгновенные выводы</li>
+        <li>Киберспорт и Live-ставки</li>
+    </ul>
+    <a href="https://tracker.betmpartners.ru/link?btag=102187322_474083" 
+       target="_blank" 
+       rel="nofollow noopener"
+       class="platform-bonus">
+        <div class="bonus-text">Перейти на BetM</div>
+    </a>
+    <div class="review-link-container">
+        <a href="reviews/betm.html" class="full-review-link leon">
+    Читать полный обзор
+</a>
+    </div>
+
+</article>
+    <!-- Fonbet -->
+    <article class="platform-card hide-fonbet">
+        
+        <div class="platform-header">
+            
+        </div>
+
+        <div class="platform-title-logos">
+            <img src="img/fonbet.png" alt="Fonbet" class="platform-logo-img">
+        </div>
+
+        
+
+        <div class="rating-section">
+            <div class="star-rating" data-rating="4.9"></div>
+        </div>
+
+        <ul class="platform-features">
+            <li>Широкая сеть пунктов приема</li>
+            <li>Надежная репутация</li>
+            <li>Богатая история</li>
+            <li>Комплексные решения</li>
+        </ul>
+
+        <a href="https://fonbet.com" target="_blank" class="platform-bonus">
+            <div class="bonus-text">Перейти на Fonbet</div>
+        </a>
+
+        <div class="review-link-container">
+            <a href="reviews/fonbet.html" class="full-review-link">Читать полный обзор</a>
+        </div>
+    </article>
+
+    <!-- Betcity -->
+    <article class="platform-card hide-fonbet">
+        <div class="platform-header">
+           
+        </div>
+
+        <div class="platform-title-logos">
+            <img src="img/betcity.png" alt="Бетсити" class="platform-logo-img">
+        </div>
+
+        
+
+        <div class="rating-section">
+            <div class="star-rating" data-rating="3.9"></div>
+        </div>
+
+        <ul class="platform-features">
+            <li>Широкая сеть пунктов приема</li>
+            <li>Надежная репутация</li>
+            <li>Богатая история</li>
+            <li>Комплексные решения</li>
+        </ul>
+
+        <a href="https://betcity.ru" target="_blank" class="platform-bonus">
+            <div class="bonus-text">Перейти на Бетсити</div>
+        </a>
+
+        <div class="review-link-container">
+            <a href="reviews/betcity.html" class="full-review-link">Читать полный обзор</a>
+        </div>
+    </article>
 </div>
-                </article>
-
-                <!-- Mellbet -->
-                <article class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-badge">Новинка</div>
-                        <div class="platform-logo mellbet-logo">MELLBET</div>
-                    </div>
-                    <h3 class="platform-title">Mellbet</h3>
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="3.8"></div>
-                    </div>
-                    
-                    <ul class="platform-features">
-                        <li>Международная лицензия</li>
-                        <li>Разнообразные виды ставок</li>
-                        <li>Щедрая бонусная программа</li>
-                        <li>Киберспортивные события</li>
-                    </ul>
-                    <a href="https://mellbet.com" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Mellbet и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-                        <a href="reviews/mellbet.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
-                </article>
-
-                <!-- BetBoom -->
-                <article class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-badge">Популярное</div>
-                        <div class="platform-logo betboom-logo">BETBOOM</div>
-                    </div>
-                    <h3 class="platform-title">BetBoom</h3>
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="4.7"></div>
-                    </div>
-                  
-                    <ul class="platform-features">
-                        <li>Высокие коэффициенты</li>
-                        <li>Современный интерфейс</li>
-                        <li>Эксклюзивные акции</li>
-                        <li>Live-ставки</li>
-                    </ul>
-                    <a href="https://betboom.ru" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на BetBoom и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-                        <a href="reviews/betboom.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
-                </article>
-
-                <!-- Fonbet -->
-                <article class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-badge">Топ выбор</div>
-                        <div class="platform-logo fonbet-logo">FONBET</div>
-                    </div>
-                    <h3 class="platform-title">Fonbet</h3>
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="4.9"></div>
-                    </div>
-                    
-                    <ul class="platform-features">
-                        <li>Широкая сеть пунктов приема</li>
-                        <li>Надежная репутация</li>
-                        <li>Богатая история</li>
-                        <li>Комплексные решения</li>
-                    </ul>
-                    <a href="https://fonbet.com" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Fonbet и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-                        <a href="reviews/fonbet.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
-                </article>
-
-                <!-- Betcity -->
-                <article class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-badge">Топ выбор</div>
-                        <div class="platform-logo betsiti-logo">БЕТСИТИ</div>
-                    </div>
-                    <h3 class="platform-title">Бетсити</h3>
-                    <div class="rating-section">
-                        <div class="star-rating" data-rating="3.9"></div>
-                    </div>
-                    
-                    <ul class="platform-features">
-                        <li>Широкая сеть пунктов приема</li>
-                        <li>Надежная репутация</li>
-                        <li>Богатая история</li>
-                        <li>Комплексные решения</li>
-                    </ul>
-                    <a href="https://betcity.ru" target="_blank" class="platform-bonus">
-                        <div class="bonus-text">Перейти на Бетсити и получить бонус</div>
-                    </a>
-                    
-                    <!-- Новая ссылка "Читать полный обзор" под кнопкой -->
-                    <div class="review-link-container">
-                        <a href="reviews/betcity.html" class="full-review-link">Читать полный обзор</a>
-                    </div>
-                </article>
-            </div>
         </div>
     </section>
 
@@ -327,8 +377,10 @@
       );
     });
   }
+  
 </script>
 <script>
+    
   // Переключатель темы (кружочки сверху справа)
   const circleToggle = document.getElementById('circleToggle');
 
@@ -349,6 +401,65 @@
     });
   }
 </script>
+<script>
+  const ligaLogo = document.querySelector('#ligaLogo');
+
+  if (ligaLogo) {
+    ligaLogo.style.cursor = 'pointer';
+
+    ligaLogo.addEventListener('click', function () {
+      window.open(
+        'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  const mellbetLogo = document.querySelector('#mellbetLogo');
+
+  if (mellbetLogo) {
+    mellbetLogo.style.cursor = 'pointer';
+
+    mellbetLogo.addEventListener('click', function () {
+      window.open(
+        'https://tracker.partnersmelbet.ru/link?btag=102211685_474099',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  const btnMellbet = document.querySelector('#btnMellbet');
+
+  if (btnMellbet) {
+    btnMellbet.style.cursor = 'pointer';
+
+    btnMellbet.addEventListener('click', function () {
+      window.open(
+        'https://tracker.partnersmelbet.ru/link?btag=102211685_474099',
+        '_blank'
+      );
+    });
+  }
+</script>
+<script>
+  const mellbetBonus = document.querySelector('#mellbetBonus');
+
+  if (mellbetBonus) {
+    mellbetBonus.style.cursor = 'pointer';
+
+    mellbetBonus.addEventListener('click', function () {
+      window.open(
+        'https://tracker.partnersmelbet.ru/link?btag=102211685_474099',
+        '_blank'
+      );
+    });
+  }
+</script>
+
+
+
 
 <script src="js/script.js"></script>
 </body>
