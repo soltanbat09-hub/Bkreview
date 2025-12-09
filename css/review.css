@@ -1,391 +1,893 @@
-/* Review Page Specific Styles */
-.review-page {
-    padding: 40px 0 60px;
+/* ===============================
+   Общие вещи для страницы Leon
+   =============================== */
+
+body.leon-review-page {
     background: var(--black-bg);
-    min-height: calc(100vh - 200px);
-}
-
-.review-header {
-    background: var(--dark-bg);
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 40px;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.review-header-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.review-logo {
-    width: 150px;
-    height: 60px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
-
-.review-title {
-    font-size: 32px;
-    margin-bottom: 10px;
     color: var(--text-light);
 }
 
-.review-rating {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+.leon-wrapper {
+    max-width: 1200px;
+    margin: 20px auto 60px;
+    padding: 0 20px;
 }
 
-.rating-badge {
-    background: var(--gray-accent);
-    color: var(--black-bg);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.rating-stars {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.review-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-primary {
-    background: var(--gray-accent);
-    color: var(--black-bg);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-
-.btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--text-light);
-    border: 1px solid var(--border-light);
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-
-.btn-secondary:hover {
-    border-color: var(--gray-accent);
-    background: var(--card-hover);
-}
-
-.review-content {
+/* двухколоночная сетка: слева сайдбар, справа контент */
+.leon-review-page .grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    gap: 24px;
 }
 
-@media (max-width: 992px) {
-    .review-content {
+/* мобильный вид: одна колонка */
+@media (max-width: 900px) {
+    .leon-review-page .grid {
         grid-template-columns: 1fr;
     }
 }
 
-.review-main {
+/* ===============================
+   Сайдбар
+   =============================== */
+
+.review-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 16px;
 }
 
-.review-section {
+/* карточка Leon — берём базовый стиль из style.css, только отступы */
+.leon-review-page .platform-card.leon-card {
+    width: 100%;
+    margin: 0;
+}
+
+/* промокод под Леоном */
+.promo-card {
     background: var(--card-bg);
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 12px;
     border: 1px solid var(--border);
+    padding: 10px 12px 12px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
 }
 
-.review-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: var(--text-light);
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.review-section p {
+.promo-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--text-gray);
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 2px;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.feature-item {
-    background: var(--dark-bg);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border-light);
-}
-
-.feature-item h3 {
+.promo-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     color: var(--text-light);
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 2px;
 }
 
-.feature-item p {
-    margin-bottom: 0;
+.promo-code-text {
+    white-space: nowrap;
+}
+
+.promo-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: var(--card-bg);
+    color: var(--text-gray);
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+.promo-copy-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--card-hover);
+    transform: scale(1.05);
+}
+
+.promo-tooltip {
+    margin-left: 4px;
+    font-size: 11px;
+    color: #22c55e;
+    opacity: 0;
+    transform: translateY(-2px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.promo-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.promo-sub {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-gray);
+}
+
+/* боковые карточки (навигация, альтернативы) */
+.sidebar-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 16px 16px 18px;
+}
+
+.sidebar-card h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* навигация */
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     font-size: 14px;
 }
 
-.pros-cons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.pros-list, .cons-list {
-    padding: 20px;
+.side-nav-link {
+    color: var(--text-gray);
+    text-decoration: none;
+    padding: 4px 6px;
     border-radius: 8px;
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
 }
 
-.pros-list {
-    background: rgba(0, 255, 0, 0.1);
-    border: 1px solid rgba(0, 255, 0, 0.2);
-}
-
-.cons-list {
-    background: rgba(255, 0, 0, 0.1);
-    border: 1px solid rgba(255, 0, 0, 0.2);
-}
-
-.pros-list h3, .cons-list h3 {
+.side-nav-link:hover {
+    background: var(--card-hover);
     color: var(--text-light);
-    margin-bottom: 15px;
+    transform: translateX(2px);
+}
+
+/* альтернативы */
+.alt-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.alt-card:first-of-type {
+    border-top: none;
+}
+
+.alt-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.pros-list ul, .cons-list ul {
-    list-style: none;
+.alt-logo {
+    width: 72px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--card-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.pros-list li, .cons-list li {
-    padding: 8px 0;
-    color: var(--text-gray);
+.alt-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.alt-go-btn {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-light);
+    transition: .2s ease;
+}
+
+.alt-go-btn:hover {
+    border-color: var(--accent);
+    background: var(--card-hover);
+}
+
+/* ===============================
+   Верхний обзорный блок
+   =============================== */
+
+.review-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-banner {
+    margin-bottom: 18px;
+    padding: 20px 24px 22px;
+    border-radius: 18px;
+    background: #111821;
+    border: 1px solid rgba(148,163,184,0.45);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-banner-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    color: #e5e7eb;
+}
+
+/* Плюсы / Минусы */
+.pros-cons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.pros-list,
+.cons-list {
+    padding: 16px 14px;
+    border-radius: 12px;
+}
+
+.pros-list {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.cons-list {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.pros-list h3,
+.cons-list h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    margin: 0 0 10px;
+    color: var(--text-light);
+}
+
+.pc-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.pc-plus {
+    background: rgba(34,197,94,0.18);
+    color: #22c55e;
+}
+
+.pc-minus {
+    background: rgba(248,113,113,0.18);
+    color: #f97373;
+}
+
+.pros-list ul,
+.cons-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pros-list li,
+.cons-list li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 16px;
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 4px;
 }
 
 .pros-list li::before {
-    content: '✓';
+    content: "+";
     position: absolute;
     left: 0;
-    color: #00cc66;
+    color: #22c55e;
+    font-weight: 700;
 }
 
 .cons-list li::before {
-    content: '✗';
+    content: "–";
     position: absolute;
     left: 0;
-    color: #ff4444;
+    color: #ef4444;
+    font-weight: 700;
 }
 
-.review-sidebar {
+/* Метрики справа от плюсов / минусов */
+.right-metrics {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 12px;
 }
 
-.sidebar-widget {
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 25px;
-    border: 1px solid var(--border);
-}
-
-.sidebar-widget h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: var(--text-light);
-}
-
-.info-grid {
+/* две карточки метрик */
+.review-metrics,
+.review-metrics-card {
+    background: #101214;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 14px 18px;
     display: grid;
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-.info-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.info-item:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    color: var(--text-gray);
-}
-
-.info-value {
-    color: var(--text-light);
-    font-weight: bold;
-}
-
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.comparison-table th {
-    background: var(--dark-bg);
-    color: var(--text-light);
-    font-weight: bold;
-}
-
-.comparison-table tr:hover {
-    background: var(--card-hover);
-}
-
-.verdict {
-    background: var(--dark-bg);
-    border-radius: 10px;
-    padding: 40px;
-    border: 1px solid var(--border);
-    margin-top: 40px;
-}
-
-.verdict-header {
+.metric-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.verdict-rating {
-    background: var(--gray-accent);
-    color: var(--black-bg);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 24px;
+.metric-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    opacity: 0.9;
 }
 
-.verdict h2 {
-    color: var(--text-light);
-    font-size: 28px;
-    margin: 0;
+/* звёзды в метриках – компактные */
+.review-metrics .star-rating,
+.review-metrics-card .star-rating {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
 }
 
-.verdict-content {
+.review-metrics .star-rating .stars,
+.review-metrics-card .star-rating .stars {
+    display: flex;
+    gap: 2px;
+}
+
+.review-metrics .star-rating .star-empty,
+.review-metrics .star-rating .star-filled,
+.review-metrics-card .star-rating .star-empty,
+.review-metrics-card .star-rating .star-filled {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+/* цвет звёзд как на карточке */
+.review-metrics .star-rating .star-filled,
+.review-metrics-card .star-rating .star-filled {
+    color: #f1c40f;
+}
+
+/* раскладка внутри обзорного баннера на десктопе */
+@media (min-width: 900px) {
+    .review-banner {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(260px, 1.4fr);
+        grid-template-rows: auto auto auto;
+        column-gap: 24px;
+        row-gap: 16px;
+        align-items: flex-start;
+    }
+
+    .review-banner-text {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .review-banner .pros-cons {
+        grid-column: 1 / 2;
+        grid-row: 2;
+    }
+
+    .review-banner .right-metrics {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
+
+    .review-banner .review-tabs {
+        grid-column: 1 / 2;
+        grid-row: 3;
+    }
+}
+
+/* ===============================
+   Табы
+   =============================== */
+
+.review-tabs {
+    background: #050608;
+    border-radius: 18px;
+    border: 1px solid rgba(148,163,184,0.35);
+    padding: 0 24px 18px;
+    margin-top: 10px;
+}
+
+.review-tabs-nav {
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid rgba(55,65,81,0.9);
+    margin: 0 -24px 14px;
+    padding: 0 24px;
+    overflow-x: auto;
+}
+
+.review-tab {
+    position: relative;
+    padding: 14px 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b7280;
+    background: none;
+    border: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.review-tab.active {
+    color: #e5e7eb;
+}
+
+.review-tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 999px 999px 0 0;
+    background: #22c55e;
+}
+
+/* контент табов */
+.review-tabs-content {
+    padding-top: 6px;
+}
+
+.review-tab-panel {
+    display: none;
+    font-size: 14px;
     color: var(--text-gray);
+}
+
+.review-tab-panel.active {
+    display: block;
+}
+
+.review-tab-panel h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: var(--text-light);
+}
+
+.review-tab-panel p {
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
-.verdict-content p {
-    margin-bottom: 15px;
+/* ===============================
+   Нижние карточки
+   =============================== */
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 22px 22px 18px;
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
 }
 
-/* Back button */
-.back-button {
-    background: var(--card-bg);
-    border: 1px solid var(--border-light);
+.card h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
     color: var(--text-light);
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
+}
+
+.card p {
     font-size: 14px;
-    margin-bottom: 30px;
-    display: inline-flex;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.card ul {
+    padding-left: 18px;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.promo-card {
+    display: none !important;
+}
+/* Делаем верхний блок серым, как карточка Леон */
+.review-banner {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+
+/* Списки плюсов и минусов тоже вписываем в серую тему */
+.pros-list,
+.cons-list {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* Метрики справа — тоже серые */
+.review-metrics,
+.review-metrics-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* Контейнер табов делаем серым */
+.review-tabs {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* Убираем горизонтальную прокрутку полностью */
+.review-tabs-nav {
+    overflow-x: visible !important;
+    overflow: visible !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 32px !important;
+}
+
+/* Табы растягиваются равномерно, без скролла */
+.review-tab {
+    flex: 1 1 auto !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+}
+/* Убираем контейнер вокруг табов */
+.review-tabs {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.tab-content-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 10px;
+}
+/* ОДНА длинная линия под табами */
+.review-tabs-nav {
+    position: relative;
+}
+
+.review-tabs-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: rgba(55, 65, 81, 0.9); /* твой серый цвет */
+}
+.review-tabs-content,
+.review-tab-panel {
+    width: 100% !important;
+}
+@media (min-width: 900px) {
+    .review-banner .review-tabs {
+        grid-column: 1 / -1 !important; /* табы + контент на всю ширину баннера */
+    }
+}
+.review-tabs-nav {
+    position: relative;
+}
+
+.review-tabs-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;       /* ровно под табами */
+    height: 1px;
+    background: rgba(55, 65, 81, 0.9); /* серый цвет */
+}
+.review-tabs,
+.review-tabs-nav {
+    width: 100% !important;
+}
+/* --- Табы: растянуть на всю ширину и оставить одну линию --- */
+
+/* на десктопе табы занимают всю ширину баннера */
+@media (min-width: 900px) {
+    .review-banner .review-tabs {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+/* сам блок табов — без лишнего фона/рамки, но на всю ширину */
+.review-tabs {
+    width: 100% !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: 10px !important;
+}
+
+/* контейнер с кнопками табов */
+.review-tabs-nav {
+    display: flex !important;
+    gap: 32px !important;
+    width: 100% !important;
+    margin: 0 0 12px !important;   /* убираем отрицательный margin */
+    padding: 0 !important;         /* убираем внутренние отступы */
+    overflow: visible !important;  /* без скролла */
+    border-bottom: 1px solid rgba(55,65,81,0.9) !important; /* ОДНА серая линия */
+    position: relative !important;
+}
+
+/* убиваем вторую (лишнюю) линию от псевдо-элемента */
+.review-tabs-nav::after {
+    content: none !important;
+}
+
+/* зелёная линия только под активным табом — оставляем */
+.review-tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 999px 999px 0 0;
+    background: #22c55e;
+}
+/* ==== Оставляем одну линию под табами ==== */
+
+/* Табы и навигация занимают всю ширину контейнера */
+.review-tabs,
+.review-tabs-nav {
+    width: 100% !important;
+}
+
+/* Одна-единственная серая линия под табами */
+.review-tabs-nav {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(55,65,81,0.9) !important;
+    position: static !important;
+}
+
+/* Полностью убираем любые псевдо-элементы с линиями */
+.review-tabs-nav::before,
+.review-tabs-nav::after,
+.review-tabs::before,
+.review-tabs::after {
+    content: none !important;
+}
+
+/* Зелёная линия только под активным табом */
+.review-tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 999px 999px 0 0;
+    background: #22c55e;
+}
+
+/* На всякий случай убираем границы сверху у контента, чтобы не было второй линии */
+.review-tabs-content,
+.review-tab-panel,
+.tab-content-box {
+    border-top: none !important;
+}
+/* тянем линию под табами на всю ширину */
+.review-tabs-nav {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(55,65,81,0.9) !important;
+}
+.review-banner .review-tabs {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+}
+.review-link-container {
+    display: none !important;
+}
+/* Общий контейнер альтернатив */
+.review-alternatives {
+    margin-top: 16px;
+}
+
+/* Один элемент альтернатив */
+.alt-item {
+    display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.alt-item:last-child {
+    border-bottom: none;
+}
+
+/* Логотип */
+.alt-logo {
+    width: 70px;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Текстовый блок */
+.alt-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Название платформы */
+.alt-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+/* Ссылка "Обзор" */
+.alt-link {
+    font-size: 14px;
+    color: #9ca3af;
     text-decoration: none;
 }
 
-.back-button:hover {
-    background: var(--card-hover);
-    border-color: var(--gray-accent);
+.alt-link:hover {
+    color: #fff;
+}
+/* Светлая тема — делаем заголовок тёмным и читаемым */
+html[data-theme="light"] .review-banner-title {
+    color: #111827 !important;  /* насыщенный тёмный, хорошо видно на белом */
+}
+/* Светлая тема — делаем текст рейтингов и категорий тёмным и читаемым */
+html[data-theme="light"] .right-metrics .metric-item,
+html[data-theme="light"] .right-metrics .metric-item span,
+html[data-theme="light"] .right-metrics .metric-item-title,
+html[data-theme="light"] .right-metrics .metric-item-description {
+    color: #111827 !important;  /* такой же цвет как у заголовка */
+}
+/* ================================
+   СВЕТЛАЯ ТЕМА — ВСЕ ТЕКСТЫ ДЕЛАЕМ ЧЁТКИМИ
+   ================================ */
+
+@media (prefers-color-scheme: light) {
+
+    /* Главный заголовок (уже работает, оставляем для надёжности) */
+    .review-banner-title {
+        color: #111 !important;
+    }
+
+    /* Все заголовки разделов */
+    h1, h2, h3, h4,
+    .section-title,
+    .pros-title,
+    .cons-title {
+        color: #111 !important;
+    }
+
+    /* Текст Плюсов / Минусов */
+    .pros-cons-card li,
+    .pros-card li,
+    .cons-card li {
+        color: #1f2937 !important;
+    }
+
+    /* Табы */
+    .review-tab {
+        color: #374151 !important;
+    }
+    .review-tab.active {
+        color: #111 !important;
+    }
+
+    /* Альтернативы — названия и "Обзор" */
+    .alt-name {
+        color: #111 !important;
+    }
+    .alt-link {
+        color: #374151 !important;
+    }
+
+    /* Правый список метрик */
+    .right-metrics .metric-item,
+    .right-metrics .metric-item span {
+        color: #111 !important;
+    }
+
+    /* Общие тексты */
+    p, span, li, a {
+        color: #1f2937 !important;
+    }
+}
+/* Светлая тема — альтернативы */
+html[data-theme="light"] .alt-name {
+    color: #111827 !important;
 }
 
-@media (max-width: 768px) {
-    .review-header {
-        padding: 25px;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .review-title {
-        font-size: 24px;
-    }
-    
-    .review-logo {
-        width: 120px;
-        height: 50px;
-        font-size: 20px;
-    }
-    
-    .review-section {
-        padding: 20px;
-    }
-    
-    .sidebar-widget {
-        padding: 20px;
-    }
-    
-    .verdict {
-        padding: 25px;
-    }
-    
-    .review-buttons {
-        justify-content: center;
-    }
+html[data-theme="light"] .alt-link {
+    color: #374151 !important;
+}
+/* Светлая тема — текст табов */
+html[data-theme="light"] .review-tab {
+    color: #6b7280 !important;
+}
+
+html[data-theme="light"] .review-tab.active {
+    color: #111827 !important;
+}
+/* Полностью убираем кружок и знак + / - рядом с заголовками Плюсы / Минусы */
+.pc-icon,
+.pc-plus,
+.pc-minus {
+    display: none !important;
+}
+/* Опустить блок рейтингов ниже */
+.right-metrics {
+    margin-top: 15px !important;   /* можно менять на 20px / 40px как хочешь */
+}
+.general-extra-info {
+    margin-top: 8px;
+    padding-top: 0;   /* линия убрана, отступ сверху тоже можно убрать */
+}
+
+.general-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.general-label {
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.general-value {
+    color: #d1d5db;
 }

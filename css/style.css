@@ -5,6 +5,7 @@
 
 :root {
   /* LIGHT THEME (defaults) */
+  
   --bg-primary: #F5F5F5;
   --bg-card: #FFFFFF;
   --text-primary: #222222;
@@ -253,20 +254,20 @@ body {
 
 .platforms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
 }
-
 .platform-card {
     background: var(--card-bg);
     border-radius: 10px;
-    padding: 18px;
+    padding: 12px 14px;
     border: 1px solid var(--border);
     transition: all 0.3s;
     position: relative;
-    min-height: 350px;
+    min-height: 0;          /* ВАЖНО: больше нет фиксированной высоты */
     display: flex;
     flex-direction: column;
+    gap: 6px;               /* маленькие расстояния между блоками */
 }
 
 .platform-card:hover {
@@ -307,6 +308,30 @@ body {
     font-size: 11px;
     transition: all 0.3s ease;
 }
+/* Блок логотипов под заголовком карточки – как в референсе */
+.platform-title-logos {
+    margin: 2px 0 6px !important;
+     display: flex;
+    justify-content: center;
+}
+
+
+.platform-logo-img,
+.platform-logo-svg {
+    height: 26px !important;
+    max-width: 90px !important;
+}
+
+
+/* На мобильных чуть меньше */
+@media (max-width: 480px) {
+    .platform-logo-img,
+    .platform-logo-svg {
+        height: 26px;
+        max-width: 100px;
+    }
+}
+
 
 /* Логотипы букмекеров */
 .winline-logo { background: #ff6b00; color: white; }
@@ -596,14 +621,12 @@ body {
 :root[data-theme="light"] .full-review-link:hover {
     color: #ff6b00 !important;
 }
-
-/* Стили для секции рейтинга */
 .rating-section {
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: flex-start;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
@@ -634,8 +657,8 @@ body {
     }
 
     .platform-card {
-        padding: 16px;
-        min-height: 340px;
+        padding: 10px 12px;
+        min-height: 0;
     }
 
     .banner-item {
@@ -712,12 +735,14 @@ body {
         flex-direction: column;
         gap: 12px;
     }
-
-    .platform-card {
-        padding: 14px;
-        min-height: 330px;
-    }
-
+.platform-card {
+    padding: 12px !important;
+    min-height: 260px !important;
+    border-radius: 8px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* меньше расстояние между блоками */
+}
     .bonus-text {
         padding: 6px 7px;
         font-size: 11px;
@@ -1190,12 +1215,7 @@ html[data-theme="light"] .light-circle { opacity: 1; }
 .moving-banner {
     display: none !important;
 }
-.platform-logo {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
-}
+
 /* Зеленый hover только для Лига Ставок */
 #btnPari:hover .bonus-text,
 .liga-review:hover {
@@ -1248,4 +1268,471 @@ html[data-theme="light"] .light-circle { opacity: 1; }
 .star-rating .stars {
     position: relative;
     z-index: 5;
+}
+/* ==== COMPACT CARDS (как в референсе CSGOPositive) ==== */
+
+/* высота карточки = только по контенту */
+.platform-card {
+    min-height: auto !important;      /* убиваем 350 / 340 / 330 */
+    padding: 12px 14px !important;    /* меньше внутренние отступы */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px !important;
+}
+
+/* логотип компактно под верхом */
+.platform-title-logos {
+    margin: 4px 0 6px !important;
+}
+
+/* звёзды по центру и близко к лого */
+.rating-section {
+    margin: 4px 0 6px !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* компактный список преимуществ */
+.platform-features {
+    margin: 4px 0 6px !important;
+}
+
+.platform-features li {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+}
+
+/* компактная кнопка, как на рефе */
+.platform-bonus {
+    padding: 8px 10px !important;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+}
+
+.bonus-text {
+    font-size: 13px !important;
+    padding: 6px 8px !important;
+}
+
+/* ссылка "Читать полный обзор" ближе к кнопке */
+.review-link-container {
+    margin-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+/* ===== COMPACT CARD FIX ===== */
+
+/* Центрируем звезды */
+.rating-section {
+    margin-bottom: 8px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Компактная карточка */
+.platform-card {
+    padding: 12px !important;
+    min-height: 260px !important;
+    border-radius: 8px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px !important;
+}
+
+.platform-logo-img {
+    height: 26px !important;
+    max-width: 90px !important;
+    object-fit: contain;
+}
+.platform-logo-img,
+.platform-logo-svg {
+    max-height: 70px !important;    /* было 40px */
+    max-width: 150px !important;    /* было 170px */
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Список компактнее */
+.platform-features {
+    margin-bottom: 6px !important;
+}
+
+.platform-features li {
+    margin-bottom: 3px !important;
+    font-size: 12px !important;
+}
+
+/* Кнопка компактная */
+.platform-bonus {
+    padding: 8px !important;
+    margin-top: auto !important;
+    margin-bottom: 4px !important;
+}
+
+.bonus-text {
+    padding: 5px 6px !important;
+    font-size: 12px !important;
+}
+
+/* Центр блока "Читать обзор" */
+.review-link-container {
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+/* ==== ЛОГОТИПЫ В КАРТОЧКАХ (ЦЕНТР + ТЕНЬ) ==== */
+
+.platform-title-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 10px;
+}
+
+.platform-logo-img,
+.platform-logo-svg {
+    height: 28px;
+    max-width: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Лёгкая подсветка как в рефе при ховере карточки */
+.platform-card:hover .platform-logo-img,
+.platform-card:hover .platform-logo-svg {
+    transform: translateY(-1px) scale(1.02);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+}
+/* Полностью скрыть карточку Winline */
+.platform-card.winline-card {
+    display: none !important;
+}
+
+/* /css/style.css */
+/* --- Compact card width + narrow action button (CSGOPositive-like) --- */
+.platforms-grid {
+  justify-items: center;                 /* центрируем карточки в гриде */
+}
+
+.platform-card {
+  width: 100%;
+  max-width: 320px;                      /* ключевое: карточка визуально уже */
+  justify-self: center;                  /* не растягивать на всю 1fr-колонку */
+}
+
+.platform-bonus {
+  width: 86%;                            /* кнопка уже, чем карточка */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 10px;                     /* компактнее */
+}
+
+.bonus-text {
+  font-size: 12px;                       /* как на рефе — плотнее */
+  padding: 6px 8px;
+}
+
+/* слегка уже на очень широких экранах */
+@media (min-width: 1200px) {
+  .platform-card { max-width: 300px; }   /* WHY: ближе к пропорциям рефа */
+}
+
+/* на мобильных — чуть шире, чтобы текст не ломался */
+@media (max-width: 480px) {
+  .platform-card { max-width: 340px; }
+  .platform-bonus { width: 92%; }
+}
+/* === Card alignment tuning: logo/stars sizes + unified button baseline === */
+
+/* WHY: одинаковая высота области с логотипом, чтобы контент над кнопкой был равным */
+.platform-title-logos {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.platform-title-logos img,
+.platform-title-logos .platform-logo-img,
+.platform-title-logos .platform-logo-svg {
+  max-height: 44px;       /* компактнее как на рефе */
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* WHY: звёзды визуально ближе к референсу и занимают фиксированную высоту */
+.rating-section {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.star { width: 14px; height: 14px; }   /* было 12px */
+
+/* WHY: единый отступ и фиксированная высота списка — кнопки выровняются по низу */
+.platform-features {
+  padding-left: 18px;    /* стабильная “полочка” под галочку */
+  min-height: 118px;     /* 4 пункта влезают без переноса; подправь при др. кол-ве */
+  margin-bottom: 10px;
+}
+
+/* Карточка уже флекс-колонка в проекте; прижимаем кнопку вниз */
+.platform-card { display: flex; flex-direction: column; }
+.platform-bonus { margin-top: auto; width: 86%; margin-left:auto; margin-right:auto; }
+.bonus-text { font-size: 12px; padding: 6px 10px; }
+
+/* Мобайл: поле для текста побольше */
+@media (max-width: 480px) {
+  .platform-title-logos { height: 68px; }
+  .platform-features { min-height: 130px; }
+  .platform-bonus { width: 92%; }
+}
+/* --- Compact spacing pass --- */
+
+/* Карточка — меньше «воздуха» внутри */
+.platform-card {
+  padding: 14px;                /* было ~18–20 */
+  gap: 10px;                    /* если используется gap внутри */
+}
+
+/* Лого — чуть ниже и компактнее */
+.platform-title-logos {
+  height: 60px;                 /* было 64 */
+}
+.platform-title-logos img,
+.platform-title-logos .platform-logo-img,
+.platform-title-logos .platform-logo-svg {
+  max-height: 40px;             /* было 44 */
+  max-width: 168px;             /* было 180 */
+}
+
+/* Рейтинг — ниже и плотнее */
+.rating-section {
+  height: 22px;                 /* было 24 */
+  margin-bottom: 6px;           /* было 10 */
+}
+.star { width: 14px; height: 14px; }    /* размер ок, оставляем */
+
+/* Список — меньше поля слева и межстрочного интервала */
+.platform-features {
+  padding-left: 16px;           /* было 18 */
+  min-height: 100px;            /* было 118 — кнопки всё ещё на одном уровне */
+  margin-bottom: 6px;           /* было 10 */
+  line-height: 1.25;            /* плотнее */
+}
+.platform-features li {
+  margin: 4px 0;                /* ужали расстояние между пунктами */
+}
+
+/* Кнопка — компактнее и уже */
+.platform-bonus {
+  width: 84%;                   /* было 86% */
+  margin: 10px auto 0;          /* стало ниже контента */
+  padding: 6px 10px;            /* было 8px 10px */
+}
+.bonus-text {
+  font-size: 11.5px;            /* было 12px */
+  padding: 5px 8px;
+}
+
+/* Мобайл — те же пропорции, немного просторнее для читабельности */
+@media (max-width: 480px) {
+  .platform-card { padding: 12px; }
+  .platform-title-logos { height: 62px; }
+  .platform-features { min-height: 110px; }
+  .platform-bonus { width: 90%; padding: 7px 10px; }
+}
+/* === Большой фон-контейнер для рейтинга (как на референсе) === */
+
+.platforms .rating-block {
+    background: var(--card-bg);               /* чуть светлее, чем фон страницы */
+    border-radius: 24px;                      /* сильные скругления, как на скрине */
+    border: 1px solid var(--border);          /* тонкая рамка */
+    padding: 24px 24px 28px;                  /* внутренние отступы вокруг карточек */
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6); /* мягкая тень снизу */
+    max-width: 1200px;
+    margin: 0 auto;                           /* центрируем блок */
+}
+
+/* чуть уменьшаем отступ сверху сетки внутри контейнера */
+.platforms .rating-block .platforms-grid {
+    margin-top: 4px;
+}
+
+/* полностью убираем шапку с табами, если она ещё осталась в HTML */
+.rating-block-header {
+    display: none !important;
+}
+/* === Большой тёмный прямоугольник вокруг карточек (как на референсе) === */
+
+.platforms {
+    padding: 60px 0 80px;
+}
+
+/* Панель с фоном для карточек */
+.platforms-panel {
+    background: var(--card-bg);              /* чуть светлее, чем общий фон */
+    border-radius: 24px;                     /* большие скругления */
+    border: 1px solid var(--border);         /* тонкая рамка по контуру */
+    padding: 32px 28px 36px;                 /* отступы внутри панели */
+    max-width: 1200px;
+    margin: 0 auto;                          /* центрируем панель */
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* чтобы сетка не добавляла сверху лишнего воздуха */
+.platforms-panel .platforms-grid {
+    margin-top: 0;
+}
+/* Первая жирная строка "Бесплатная ставка..." — всегда белая */
+.platform-features .bonus-feature strong {
+    color: #ffffff !important;
+}
+/* СДЕЛАТЬ первую строку бонуса белой */
+.platform-features li.bonus-white,
+.platform-features li.bonus-white strong {
+    color: #ffffff !important;
+}
+/* Скрываем Фонбет */
+.platform-card.hide-fonbet {
+    display: none !important;
+}
+
+/* Скрываем Бетсити */
+.platform-card.hide-betsiti {
+    display: none !important;
+}
+.feature-link {
+    color: #ffffff !important;     /* как ты хотел — белым */
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.feature-link:hover {
+    text-decoration: underline;    /* по желанию – можно убрать */
+}
+/* Стили для кликабельного бонуса BetM */
+.betm-bonus-link {
+    color: #ffffff !important;          /* белый текст */
+    text-decoration: none !important;   /* убрать подчёркивание */
+    outline: none !important;           /* убрать контур при клике */
+    border: none !important;            /* убрать рамки */
+    display: block;                     /* чтобы вел как li */
+}
+
+.betm-bonus-link strong {
+    color: #ffffff !important;          /* белый жирный текст */
+}
+
+.betm-bonus-link:hover,
+.betm-bonus-link:focus,
+.betm-bonus-link:active {
+    text-decoration: none !important;   /* не подчеркивать при наведении */
+    outline: none !important;
+    border: none !important;
+}
+
+/* Чтобы маркер списка не пропадал */
+.betm-bonus-link li {
+    list-style: disc;
+    margin-left: 20px;
+}
+.feature-link.betm-bonus {
+    color: #ffffff !important;         /* белый текст */
+    text-decoration: none !important;  /* без подчёркивания */
+}
+
+.feature-link.betm-bonus strong {
+    color: #ffffff !important;         /* белый жирный текст */
+}
+
+.feature-link.betm-bonus:hover {
+    text-decoration: none !important;  /* без подчёркивания */
+}
+/* Бонусная строка — как у Лиги Ставок */
+.bonus-line strong,
+.bonus-line,
+.bonus-line .bonus-link {
+    color: var(--bonus-text-color) !important;
+}
+
+/* Убираем подчёркивание у ссылок */
+.bonus-line a {
+    text-decoration: none !important;
+}
+
+/* Наведение — опционально */
+.bonus-line a:hover {
+    opacity: 0.85;
+}
+/* ============================
+   ЕДИНЫЙ СТИЛЬ ДЛЯ "БЕСПЛАТНАЯ СТАВКА"
+   Работает как в Лиге • Леон • BetM • Mellbet
+   ============================ */
+
+/* Цвет строки бонуса — динамический (темная/светлая тема) */
+:root {
+    --bonus-text-color: #ffffff;   /* темная тема — белый */
+}
+
+/* Светлая тема — делает строку черной */
+[data-theme="light"],
+.light-theme,
+body.light {
+    --bonus-text-color: #000000;   /* светлая тема — черный */
+}
+
+/* Общий стиль строки бонуса */
+.bonus-line,
+.bonus-line strong,
+.bonus-line a,
+.bonus-line .feature-link {
+    color: var(--bonus-text-color) !important;
+    text-decoration: none !important;
+}
+
+/* Убираем лишние эффекты */
+.bonus-line a:hover,
+.bonus-line a:active,
+.bonus-line a:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Чтобы ✓ и отступы списка выглядели ровно */
+.bonus-line {
+    list-style: disc;
+    margin-left: 20px;
+}
+/* ==========================================
+   ОТКЛЮЧАЕМ СТАРЫЕ КЛАССЫ, КОТОРЫЕ ЛОМАЮТ ТЕМЫ
+=========================================== */
+
+.bonus-white,
+.bonus-white strong,
+.bonus-highlight,
+.bonus-highlight strong {
+    color: inherit !important;
+}
+
+/* Теперь цвет полностью контролируется bonus-line */
+/* Убираем маркер у бонусной строки */
+.bonus-line {
+    list-style: none !important;
+    margin-left: 0 !important; /* убираем лишний отступ */
+    padding-left: 0 !important;
+}
+/* Галочка для строки бонуса — как у обычных пунктов */
+.bonus-line::before {
+    content: "✓";
+    color: var(--accent);   /* тот же цвет, что у остальных галочек */
+    font-weight: bold;
+    margin-right: 8px;
+    display: inline-block;
 }
