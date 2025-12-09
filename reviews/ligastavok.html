@@ -28,28 +28,35 @@
         <!-- САЙДБАР -->
         <aside class="review-sidebar">
             <!-- Карточка Лига Ставок -->
-            <article class="platform-card">
+           <article class="platform-card">
     <div id="ligaLogo" class="platform-title-logos">
-        <img src="../img/liga-banner-320x120.png" alt="Лига Ставок" class="platform-logo-img">
+        <img src="../img/liga-banner-320x120.png"
+             alt="Лига Ставок"
+             class="platform-logo-img">
     </div>
+
     <div class="rating-section">
         <div class="star-rating" data-rating="4.2"></div>
     </div>
     <ul class="platform-features">
         <li class="bonus-line">
-    <a id="freeBetLiga" class="feature-link">
-        <strong>Бесплатная ставка 7777 ₽</strong>
-    </a>
-</li>
-        <li>Широкая линия событий</li>
+            <a id="freeBetLiga" class="feature-link">
+                <strong>Бесплатная ставка 7777 ₽</strong>
+            </a>
+        </li>
+        <li>Широкая линия событий для ставок</li>
         <li>Быстрые выплаты</li>
         <li>Удобное мобильное приложение</li>
     </ul>
+
     <a id="btnPari" target="_blank" class="platform-bonus">
         <div class="bonus-text">Перейти на Лига Ставок</div>
     </a>
+
     <div class="review-link-container">
-        <a href="reviews/ligastavok.html" class="full-review-link liga">Читать полный обзор</a>
+        <a href="./reviews/ligastavok.html" class="full-review-link liga">
+            Читать полный обзор
+        </a>
     </div>
 </article>
             <!-- Промокод (если нужен – можно заполнить позже) -->
@@ -64,9 +71,9 @@
             </div>
 
             <!-- Навигация по странице -->
-            <div class="sidebar-card nav-compact">
+            <div class="sidebar-card nav-compact nav-style-5">
                 <nav class="side-nav">
-                    <a href="#review"       class="side-nav-link">Честный обзор</a>
+                    <a href="#review"       class="side-nav-link">Честный обзор от BkReview </a>
                     <a href="#general-info" class="side-nav-link">Основная информация</a>
                     <a href="#bonuses"      class="side-nav-link">Бонусы</a>
                     <a href="#payments"     class="side-nav-link">Пополнение и вывод</a>
@@ -74,27 +81,37 @@
                     <a href="#verdict"      class="side-nav-link">Итоговый вердикт</a>
                 </nav>
             </div>
-
             <!-- Альтернативы -->
-            <div class="sidebar-card alternatives">
-                <h3>Альтернативы</h3>
-
-                <div class="alt-item">
-                    <img class="alt-logo" src="../img/betm.png" alt="">
-                    <div class="alt-info">
-                        <div class="alt-name">BetM</div>
-                        <a class="alt-link" href="../reviews/betm.html">Обзор</a>
-                    </div>
-                </div>
-
-                <div class="alt-item">
-                    <img class="alt-logo" src="../img/mellbet.png" alt="">
-                    <div class="alt-info">
-                        <div class="alt-name">Мелбет</div>
-                        <a class="alt-link" href="../reviews/mellbet.html">Обзор</a>
-                    </div>
-                </div>
+<div class="sidebar-card alternatives">
+    <h3>Альтернативы</h3>
+    <!-- BetM -->
+    <div class="alt-card">
+        <div class="alt-left">
+            <div class="alt-logo">
+                <img src="../img/betm.png" alt="BetM">
             </div>
+            <div class="alt-info">
+                <div class="alt-name">BetM</div>
+                <a class="alt-link" href="../reviews/betm.html">Обзор</a>
+            </div>
+        </div>
+        <a class="alt-go-btn" href="ТВОЯ_РЕФКА_BETM" target="_blank">Перейти</a>
+    </div>
+
+    <!-- Мелбет -->
+    <div class="alt-card">
+        <div class="alt-left">
+            <div class="alt-logo">
+                <img src="../img/mellbet.png" alt="Мелбет">
+            </div>
+            <div class="alt-info">
+                <div class="alt-name">Мелбет</div>
+                <a class="alt-link" href="../reviews/mellbet.html">Обзор</a>
+            </div>
+        </div>
+        <a class="alt-go-btn" href="ТВОЯ_РЕФКА_MELLBET" target="_blank">Перейти</a>
+    </div>
+</div>
         </aside>
 
         <!-- ПРАВАЯ КОЛОНКА -->
@@ -443,6 +460,54 @@ if (btnPari) {
         );
     });
 }
+</script>
+<script>
+// Подсветка текущего пункта навигации слева
+(function () {
+    const links = document.querySelectorAll('.side-nav .side-nav-link');
+    if (!links.length) return;
+
+    const sections = Array.from(links)
+        .map(link => {
+            const id = link.getAttribute('href').slice(1);
+            const el = document.getElementById(id);
+            return el ? { id, el } : null;
+        })
+        .filter(Boolean);
+
+    function setActive(id) {
+        links.forEach(link => {
+            link.classList.toggle(
+                'side-nav-link--active',
+                link.getAttribute('href') === '#' + id
+            );
+        });
+    }
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActive(entry.target.id);
+                }
+            });
+        },
+        {
+            threshold: 0.35,
+            rootMargin: '-30% 0px -40% 0px'
+        }
+    );
+
+    sections.forEach(({ el }) => observer.observe(el));
+
+    // при клике по пункту тоже сразу подсвечиваем
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const id = link.getAttribute('href').slice(1);
+            setActive(id);
+        });
+    });
+})();
 </script>
 
 </body>
