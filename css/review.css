@@ -162,7 +162,7 @@ review-sidebar {
 }
 
 .side-nav-link {
-    color: var(--text-gray);
+    color: var(--text-light);  /* белый / чёрный */
     text-decoration: none;
     padding: 4px 6px;
     border-radius: 8px;
@@ -332,6 +332,17 @@ review-sidebar {
     font-size: 13px;
     color: var(--text-gray);
     margin-bottom: 4px;
+}
+/* Тёмная тема / общий вариант — делаем текст белым */
+html:not([data-theme="light"]) .pros-list li,
+html:not([data-theme="light"]) .cons-list li {
+    color: #ffffff !important;
+}
+
+/* Светлая тема — делаем текст чёрным */
+html[data-theme="light"] .pros-list li,
+html[data-theme="light"] .cons-list li {
+    color: #111827 !important;
 }
 
 .pros-list li::before {
@@ -783,18 +794,17 @@ review-sidebar {
     flex-direction: column;
 }
 
-/* Название платформы */
 .alt-name {
     font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 4px;
 }
 
 /* Ссылка "Обзор" */
 .alt-link {
     font-size: 14px;
-    color: #9ca3af;
+    color: var(--text-light);  /* белый / чёрный */
     text-decoration: none;
 }
 
@@ -883,7 +893,7 @@ html[data-theme="light"] .alt-name {
 }
 
 html[data-theme="light"] .alt-link {
-    color: #374151 !important;
+    color: #111827 !important;   /* почти чёрный */
 }
 /* Светлая тема — текст табов */
 html[data-theme="light"] .review-tab {
@@ -905,7 +915,7 @@ html[data-theme="light"] .review-tab.active {
 }
 .general-extra-info {
     margin-top: 8px;
-    padding-top: 0;   /* линия убрана, отступ сверху тоже можно убрать */
+    padding-top: 0;
 }
 
 .general-row {
@@ -917,12 +927,19 @@ html[data-theme="light"] .review-tab.active {
 
 .general-label {
     font-weight: 600;
-    color: #e5e7eb;
+    color: var(--text-light);   /* белый в тёмной, чёрный в светлой */
 }
 
 .general-value {
-    color: #d1d5db;
+    color: var(--text-gray);    /* остальной текст – серый */
 }
+
+/* ссылка "Посетить Мелбет/Лигу..." внутри значения */
+.general-value .feature-link,
+.general-value .feature-link span {
+    color: var(--text-light) !important;
+}
+
 /* Большая картинка + линия отделения */
 .review-image-block {
     border-bottom: 1px solid rgba(255,255,255,0.08); /* как на 500casino */
@@ -1242,4 +1259,67 @@ html[data-theme="light"] .review-tab.active {
 .side-nav-index.active {
     background: #fff;
     color: #000;
+}
+/* --- Светлая тема --- */
+@media (prefers-color-scheme: light) {
+    body,
+    .review-section,
+    .review-section p,
+    .review-section li,
+    .pros-cons-section,
+    .pros-list li,
+    .cons-list li {
+        color: #000 !important; /* черный текст */
+    }
+}
+
+/* --- Тёмная тема --- */
+@media (prefers-color-scheme: dark) {
+    body,
+    .review-section,
+    .review-section p,
+    .review-section li,
+    .pros-cons-section,
+    .pros-list li,
+    .cons-list li {
+        color: #fff !important; /* белый текст */
+    }
+}
+/* Цвета блока "Основная информация" */
+
+/* ТЁМНАЯ ТЕМА: белые заголовки и "Посетить ...", остальное серым */
+html[data-theme="dark"] .general-extra-info .general-label {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .general-extra-info .general-value {
+    color: #d1d5db !important;   /* серый текст значений */
+}
+
+html[data-theme="dark"] .general-extra-info .feature-link,
+html[data-theme="dark"] .general-extra-info .feature-link span {
+    color: #ffffff !important;   /* "Посетить Мелбет / Лигу Ставок" — белым */
+}
+
+/* СВЕТЛАЯ ТЕМА: заголовки и "Посетить ..." чёрные, значения серым */
+html[data-theme="light"] .general-extra-info .general-label {
+    color: #111827 !important;   /* почти чёрный */
+}
+
+html[data-theme="light"] .general-extra-info .general-value {
+    color: #4b5563 !important;   /* серый текст остальных значений */
+}
+
+/* ссылка "Посетить Мелбет / Лигу Ставок" в светлой теме — чёрная */
+html[data-theme="light"] .general-extra-info .feature-link,
+html[data-theme="light"] .general-extra-info .feature-link span {
+    color: #111827 !important;
+}
+/* Чек-лист под логотипом на странице обзора */
+body.leon-review-page .platform-features li {
+    color: var(--text-light);       /* текст: белый / чёрный */
+}
+
+body.leon-review-page .platform-features li::before {
+    color: var(--text-light);       /* галочки того же цвета */
 }

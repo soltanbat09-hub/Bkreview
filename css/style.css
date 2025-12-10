@@ -1604,10 +1604,11 @@ html[data-theme="light"] .light-circle { opacity: 1; }
     display: none !important;
 }
 .feature-link {
-    color: #ffffff !important;     /* как ты хотел — белым */
+    color: var(--text-light) !important;  /* белый в тёмной, чёрный в светлой */
     text-decoration: none !important;
     cursor: pointer;
 }
+
 
 .feature-link:hover {
     text-decoration: underline;    /* по желанию – можно убрать */
