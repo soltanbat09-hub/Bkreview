@@ -22,37 +22,35 @@
         </div>
     </div>
 </header>
-
 <main class="leon-wrapper">
     <div class="grid">
         <!-- САЙДБАР -->
-        <aside class="review-sidebar">
+<aside class="review-sidebar">
             <!-- Карточка Зенит как на главной -->
-            <article class="platform-card" style="margin-bottom:20px;">
-                <!-- Логотип с прямой рабочей ссылкой -->
-                <a href="https://zenit-partners.com/get/5c86fc52-e2d9-477f-b46f-c452c7c6c70b/12680/" target="_blank" rel="nofollow noopener" class="platform-title-logos">
-                    <img src="../img/zenitlogo.png" alt="Зенит" class="platform-logo-img">
-                </a>
-
-                <div class="rating-section">
-                    <div class="star-rating" data-rating="4.1"></div>
-                </div>
-                <ul class="platform-features">
-                    <li class="bonus-line">
-                        <a href="https://zenit-partners.com/get/5c86fc52-e2d9-477f-b46f-c452c7c6c70b/12680/" target="_blank" rel="nofollow noopener" class="feature-link">
-                            <strong>Бонус для новых клиентов до 35 000 ₽</strong>
-                        </a>
-                    </li>
-                    <li>Легальный букмекер с лицензией ФНС РФ</li>
-                    <li>Хорошая линия на футбол и хоккей</li>
-                    <li>Ставки в прематче и лайве, кэш-аут</li>
-                </ul>
-
-                <a href="https://zenit-partners.com/get/5c86fc52-e2d9-477f-b46f-c452c7c6c70b/12680/" target="_blank" rel="nofollow noopener" class="platform-bonus">
-                    <div class="bonus-text">Перейти на Зенит</div>
-                </a>
-            </article>
-
+           <article class="platform-card" style="margin-bottom:20px;">
+    <!-- Логотип Зенита по клику через JS -->
+    <a id="zenitLogo" class="platform-title-logos">
+        <img src="../img/zenitlogo.png" alt="Зенит" class="platform-logo-img">
+    </a>
+    <div class="rating-section">
+        <div class="star-rating" data-rating="4.1"></div>
+    </div>
+    <ul class="platform-features">
+        <li class="bonus-line">
+            <!-- Бонусная строка тоже через JS -->
+            <a id="zenitBonus" class="feature-link">
+                <strong>Бонус для новых клиентов до 35 000 ₽</strong>
+            </a>
+        </li>
+        <li>Легальный букмекер с лицензией ФНС РФ</li>
+        <li>Хорошая линия на футбол и хоккей</li>
+        <li>Ставки в прематче и лайве, кэш-аут</li>
+    </ul>
+    <!-- Кнопка "Перейти на Зенит" через JS -->
+    <a id="btnZenit" class="platform-bonus">
+        <div class="bonus-text">Перейти на Зенит</div>
+    </a>
+</article>
             <!-- Промокод (пример, можешь заменить/убрать) -->
             <div class="promo-card">
                 <div class="promo-label">Промокод</div>
@@ -63,7 +61,6 @@
                 </div>
                 <div class="promo-sub">Пример промокода для обзора</div>
             </div>
-
             <!-- Навигация по странице -->
             <div class="sidebar-card nav-compact">
                 <nav class="side-nav">
@@ -75,24 +72,21 @@
                     <a href="#verdict"      class="side-nav-link">Итоговый вердикт</a>
                 </nav>
             </div>
-
             <!-- Альтернативы -->
             <div class="sidebar-card alternatives">
                 <h3>Альтернативы</h3>
-
                 <div class="alt-item">
-                    <img class="alt-logo" src="./img/betm.png" alt="">
+                    <img class="alt-logo" src="../img/betm.png" alt="">
                     <div class="alt-info">
                         <div class="alt-name">BetM</div>
-                        <a class="alt-link" href="./reviews/betm.html">Обзор</a>
+                        <a class="alt-link" href="../reviews/betm.html">Обзор</a>
                     </div>
                 </div>
-
                 <div class="alt-item">
-                    <img class="alt-logo" src="./img/mellbet.png" alt="">
+                    <img class="alt-logo" src="../img/mellbet.png" alt="">
                     <div class="alt-info">
                         <div class="alt-name">Мелбет</div>
-                        <a class="alt-link" href="./reviews/mellbet.html">Обзор</a>
+                        <a class="alt-link" href="../reviews/mellbet.html">Обзор</a>
                     </div>
                 </div>
             </div>
@@ -185,44 +179,50 @@
                     <div class="review-tabs-content tab-content-box">
                         <!-- GENERAL -->
                         <div class="review-tab-panel active" data-tab="general">
-                            <div class="general-extra-info">
-                                <div class="general-row">
-                                    <span class="general-label">Официальный сайт:</span>
-                                    <span class="general-value">
-                                        <a href="https://zenit.win" target="_blank" rel="nofollow noopener" class="feature-link">
-                                            <span>Посетить Зенит</span>
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="general-row">
-                                    <span class="general-label">Категория:</span>
-                                    <span class="general-value">Букмекерская компания</span>
-                                </div>
-                                <div class="general-row">
-                                    <span class="general-label">Основан:</span>
-                                    <span class="general-value">Бренд работает на рынке ставок с конца 1990-х годов</span>
-                                </div>
-                                <div class="general-row">
-                                    <span class="general-label">Лицензия:</span>
-                                    <span class="general-value">
-                                        Лицензия ФНС РФ № Л027-00108-77/00396461 от 08.10.2010
-                                    </span>
-                                </div>
-                                <div class="general-row">
-                                    <span class="general-label">Регуляция и платежи:</span>
-                                    <span class="general-value">
-                                        Деятельность регулируется законодательством РФ, платежи проходят через Единый ЦУПИС
-                                    </span>
-                                </div>
-                                <div class="general-row">
-                                    <span class="general-label">Типы ставок:</span>
-                                    <span class="general-value">
-                                        Ординары, экспрессы, системы, лайв-ставки, ставки на статистику и дополнительные рынки
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+    <div class="general-extra-info">
+        <div class="general-row">
+            <span class="general-label">Официальный сайт:</span>
+            <span class="general-value">
+                <a id="zenitOfficial" class="feature-link">
+                    <span>Посетить Зенит</span>
+                </a>
+            </span>
+        </div>
 
+        <div class="general-row">
+            <span class="general-label">Категория:</span>
+            <span class="general-value">Букмекерская компания</span>
+        </div>
+
+        <div class="general-row">
+            <span class="general-label">Основан:</span>
+            <span class="general-value">
+                Бренд работает на рынке ставок с конца 1990-х годов
+            </span>
+        </div>
+
+        <div class="general-row">
+            <span class="general-label">Лицензия:</span>
+            <span class="general-value">
+                Лицензия ФНС РФ № Л027-00108-77/00396461 от 08.10.2010
+            </span>
+        </div>
+
+        <div class="general-row">
+            <span class="general-label">Регуляция и платежи:</span>
+            <span class="general-value">
+                Деятельность регулируется законодательством РФ, платежи проходят через Единый ЦУПИС
+            </span>
+        </div>
+
+        <div class="general-row">
+            <span class="general-label">Типы ставок:</span>
+            <span class="general-value">
+                Ординары, экспрессы, системы, лайв-ставки, ставки на статистику и дополнительные рынки
+            </span>
+        </div>
+    </div>
+</div>
                         <!-- BONUSES -->
                         <div class="review-tab-panel" data-tab="bonuses">
                             <h3>Бонусы и акции Зенит</h3>
@@ -315,7 +315,7 @@
             </section>
 <!-- ГАЛЕРЕЯ: ОБЩИЙ ВИД -->
             <div class="img-wrapper">
-                <img class="img-main" src="../img/zenitmain.png" alt="Марафон — интерфейс сайта">
+                <img class="img-main" src="../img/zenitmain.png" alt="Зенит — интерфейс сайта">
 
                 <div class="img-thumbs">
                     <img src="../img/zenitmain.png" class="img-thumb active" alt="">
@@ -347,7 +347,7 @@
             <!-- ГАЛЕРЕЯ: БОНУСЫ -->
             <div class="img-wrapper bonus-illustration">
                 <!-- Поставь свои реальные изображения бонусов -->
-                <img class="img-main" src="./img/ZENITBONUS" alt="Бонусы Зенит">
+                <img class="img-main" src="../img/zenitbonus.png" alt="Бонусы Зенит">
                 <div class="img-line"></div>
             </div>
 
@@ -433,6 +433,25 @@ document.querySelectorAll('.img-wrapper').forEach(wrapper => {
         });
     });
 });
+</script>
+<script>
+const zenitAffiliateUrl = 'https://zenit-partners.com/get/5c86fc52-e2d9-477f-b46f-c452c7c6c70b/12680/';
+
+const zenitLogo     = document.querySelector('#zenitLogo');
+const zenitBonus    = document.querySelector('#zenitBonus');
+const btnZenit      = document.querySelector('#btnZenit');
+const zenitOfficial = document.querySelector('#zenitOfficial'); 
+
+[zenitLogo, zenitBonus, btnZenit, zenitOfficial].forEach((el) => {
+    if (!el) return;
+
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(zenitAffiliateUrl, '_blank');
+    });
+});
+
 </script>
 </body>
 </html>

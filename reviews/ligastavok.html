@@ -95,9 +95,12 @@
                 <a class="alt-link" href="../reviews/betm.html">Обзор</a>
             </div>
         </div>
-        <a class="alt-go-btn" href="ТВОЯ_РЕФКА_BETM" target="_blank">Перейти</a>
-    </div>
-
+        <a class="alt-go-btn"
+           href="https://tracker.betmpartners.ru/link?btag=102187322_474083"
+           target="_blank" rel="nofollow noopener">
+            Открыть сайт
+        </a>
+</div>
     <!-- Мелбет -->
     <div class="alt-card">
         <div class="alt-left">
@@ -109,7 +112,7 @@
                 <a class="alt-link" href="../reviews/mellbet.html">Обзор</a>
             </div>
         </div>
-        <a class="alt-go-btn" href="ТВОЯ_РЕФКА_MELLBET" target="_blank">Перейти</a>
+        <a id="btnMellbet" class="alt-go-btn">Открыть сайт</a>
     </div>
 </div>
         </aside>
@@ -132,7 +135,7 @@
                             <li>Легальный букмекер с лицензией ФНС РФ.</li>
                             <li>Один из самых опытных брендов на рынке (работает много лет).</li>
                             <li>Сильная линия на футбол, хоккей и топовые турниры.</li>
-                            <li>Удобное мобильное приложение с лайв-центром.</li>
+                            <li>Удобное и быстрое мобильное приложение.</li>
                             <li>Регулярные акции, фрибеты и экспресс-бусты.</li>
                             <li>Стабильные выплаты и надёжная работа платёжных сервисов.</li>
                         </ul>
@@ -142,6 +145,8 @@
                         <ul>
                             <li>На редкие и низшие лиги линия может быть скромнее, чем у международных БК.</li>
                             <li>Часть акций доступна не всем игрокам, а отдельным категориям.</li>
+                            <li>Неполная или ограниченная статистика в лайве</li>
+                            <li>Не всегда оперативная поддержка</li>
                         </ul>
                     </div>
                 </div>
@@ -200,14 +205,14 @@
                         <!-- GENERAL -->
                         <div class="review-tab-panel active" data-tab="general">
                             <div class="general-extra-info">
-                                <div class="general-row">
-                                    <span class="general-label">Официальный сайт:</span>
-                                    <span class="general-value">
-                                        <a href="https://ligastavok.ru" target="_blank" rel="nofollow noopener" class="feature-link">
-                                            <span>Посетить Лигу Ставок</span>
-                                        </a>
-                                    </span>
-                                </div>
+                               <div class="general-row">
+    <span class="general-label">Официальный сайт:</span>
+    <span class="general-value">
+        <a id="ligaOfficial" class="feature-link">
+            <span>Посетить Лигу Ставок</span>
+        </a>
+    </span>
+</div>
                                 <div class="general-row">
                                     <span class="general-label">Категория:</span>
                                     <span class="general-value">Букмекерская компания</span>
@@ -454,6 +459,35 @@ const btnPari = document.querySelector('#btnPari');
 if (btnPari) {
     btnPari.style.cursor = 'pointer';
     btnPari.addEventListener('click', function () {
+        window.open(
+            'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
+            '_blank'
+        );
+    });
+}
+</script>
+<script>
+// Рефка Мелбета
+const mellbetAffiliateUrl = 'https://tracker.partnersmelbet.ru/link?btag=102211685_474099';
+
+// Кнопка "Открыть сайт" Мелбет
+const btnMellbet = document.querySelector('#btnMellbet');
+
+if (btnMellbet) {
+    btnMellbet.style.cursor = 'pointer';
+    btnMellbet.addEventListener('click', function (e) {
+        e.preventDefault(); // чтобы не прыгал по href="#"
+        window.open(mellbetAffiliateUrl, '_blank');
+    });
+}
+</script>
+
+<script>
+const ligaOfficial = document.querySelector('#ligaOfficial');
+if (ligaOfficial) {
+    ligaOfficial.style.cursor = 'pointer';
+    ligaOfficial.addEventListener('click', function (e) {
+        e.preventDefault();
         window.open(
             'https://click.lp-link.ru/lJiOsbiK?landing=2&sub_id1=8811&sub_id2={click_id}&sub_id3=bkreview.net&sub_id4=seo&sub_id5=geo_ru&sub_id6={device}&sub_id7={browser}',
             '_blank'

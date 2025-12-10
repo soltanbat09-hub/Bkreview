@@ -29,41 +29,39 @@
         <aside class="review-sidebar">
             <!-- Карточка Марафон -->
             <article class="platform-card">
-    <a href="https://mrthn.ru/dpblsmpzb" 
-       target="_blank" 
-       rel="nofollow noopener"
-       class="platform-title-logos">
+    <!-- Логотип Марафон по клику через JS -->
+    <a id="marathonLogo" class="platform-title-logos">
         <img src="../img/marathonlogo.png" alt="marathon" class="platform-logo-img">
     </a>
+
     <div class="rating-section">
         <div class="star-rating" data-rating="4.3"></div>
     </div>
+
     <ul class="platform-features">
-      <li class="bonus-line">
-  <a href="https://mrthn.ru/dpblsmpzb"
-     target="_blank"
-     rel="nofollow noopener"
-     class="feature-link">
-     <strong>Бесплатная ставка до 25 000 ₽</strong>
-  </a>
-</li>
+        <li class="bonus-line">
+            <!-- Бонусный текст тоже через JS -->
+            <a id="marathonBonus" class="feature-link">
+                <strong>Бесплатная ставка до 25 000 ₽</strong>
+            </a>
+        </li>
         <li>Поддержка криптовалют</li>
         <li>Мгновенные выводы</li>
         <li>Киберспорт и Live-ставки</li>
     </ul>
-    <a href="https://mrthn.ru/dpblsmpzb" 
-       target="_blank" 
-       rel="nofollow noopener"
-       class="platform-bonus">
+
+    <!-- Кнопка "Перейти на Марафон бет" через JS -->
+    <a id="btnMarathon" class="platform-bonus">
         <div class="bonus-text">Перейти на Марафон бет</div>
     </a>
+
     <div class="review-link-container">
         <a href="reviews/betm.html" class="full-review-link leon">
-    Читать полный обзор
-</a>
+            Читать полный обзор
+        </a>
     </div>
-
 </article>
+
 
             <!-- Промокод (пример) -->
             <div class="promo-card">
@@ -199,13 +197,13 @@
                         <div class="review-tab-panel active" data-tab="general">
                             <div class="general-extra-info">
                                 <div class="general-row">
-                                    <span class="general-label">Официальный сайт:</span>
-                                    <span class="general-value">
-                                        <a href="https://marathonbet.ru" target="_blank" rel="nofollow noopener" class="feature-link">
-                                            <span>Посетить Марафон</span>
-                                        </a>
-                                    </span>
-                                </div>
+    <span class="general-label">Официальный сайт:</span>
+    <span class="general-value">
+        <a id="marathonOfficial" class="feature-link">
+            <span>Посетить Марафон</span>
+        </a>
+    </span>
+</div>
                                 <div class="general-row">
                                     <span class="general-label">Категория:</span>
                                     <span class="general-value">Букмекерская компания</span>
@@ -413,15 +411,27 @@ document.querySelectorAll('.img-wrapper').forEach(wrapper => {
 </script>
 
 <!-- Клики по Марафону (логотип, бонус, кнопка) -->
-<script>
 // Логотип Марафон
-const marathonLogo = document.querySelector('#marathonLogo');
-if (marathonLogo) {
-    marathonLogo.style.cursor = 'pointer';
-    marathonLogo.addEventListener('click', function () {
-        window.open('https://marathonbet.ru', '_blank');
+<!-- Клики по Марафону (логотип, бонус, кнопка, "Посетить Марафон") -->
+<script>
+const marathonAffiliateUrl = 'https://mrthn.ru/dpblsmpzb';
+
+const marathonLogo      = document.querySelector('#marathonLogo');
+const marathonBonus     = document.querySelector('#marathonBonus');
+const btnMarathon       = document.querySelector('#btnMarathon');
+const marathonOfficial  = document.querySelector('#marathonOfficial'); // "Посетить Марафон" в блоке Официальный сайт
+
+[marathonLogo, marathonBonus, btnMarathon, marathonOfficial].forEach((el) => {
+    if (!el) return;
+
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(marathonAffiliateUrl, '_blank');
     });
-}
+});
+</script>
+
 
 // Ссылка "Бонус для новых игроков"
 const marathonBonus = document.querySelector('#marathonBonus');
